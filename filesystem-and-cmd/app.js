@@ -1,11 +1,19 @@
+const fs = require("fs");
 const yargs = require("yargs");
 const { getNotes } = require("./utils");
 
 yargs.command({
   command: "add",
   describe: "Adds a new note to the database",
-  handler: function() {
-    console.log(" [Analytics] Sending data to server::ADD_NOTE");
+  builder: {
+    title: {
+      describe: "Title of the note",
+      demandOption: true,
+      type: "string"
+    }
+  },
+  handler: function(argv) {
+    console.log(" [Analytics] Sending data to server::ADD_NOTE", argv);
   }
 });
 
@@ -17,11 +25,30 @@ yargs.command({
   }
 });
 
+yargs.parse();
+
+console.log("[yargs.argv]", yargs.argv);
+
 const [command] = yargs.argv._;
+const { title } = yargs.argv;
+
+console.log("[title]", title);
+
+let notes = [];
+let note = { title };
+notes.push(note);
 
 switch (command) {
   case "add":
-    console.log("[Adding note]");
+    let notes = fs.readFile("./notes.json", null, function(err, notes) {
+      console.log(" [err] ", err);
+
+      if (err) {
+        fs.writeFile("./notes.json", JSON.stringify([{title}]), function() {});
+      } else {
+        console.log(" [notes] ", JSON.parse(notes.toString()));
+      }
+    });
 
     break;
 
