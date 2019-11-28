@@ -6,25 +6,25 @@ const apiUrl =
 
 // // USING DEFAULT https MODULE
 
-// const https = require("https");
+const https = require("https");
 
-// https
-//   .get(apiUrl, response => {
-//     let chunkString = "";
+https
+  .get(apiUrl, response => {
+    let chunkString = "";
 
-//     response.on("data", chunk => {
-//       chunkString += chunk;
-//     });
+    response.on("data", chunk => {
+      chunkString += chunk;
+    });
 
-//     response.on("end", () => {
-//       console.log("[data]", JSON.parse(chunkString));
-//     });
-//   })
-//   .on("errro", error => {
-//     console.log("[error]", error);
-//   });
+    response.on("end", () => {
+      console.log("[data]", JSON.parse(chunkString));
+    });
+  })
+  .on("errro", error => {
+    console.log("[error]", error);
+  });
 
-// // USING request NPM PACKAGE
+// USING request NPM PACKAGE
 
 // const request = require("request");
 
