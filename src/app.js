@@ -5,14 +5,23 @@ const app = express();
 const port = "4001";
 
 const pathPublicDir = path.join(__dirname, "../public");
-const pathViewsDir = path.join(__dirname, "../views/pages");
+const pathViewsDir = path.join(__dirname, "../views");
+
+console.log(pathPublicDir);
+
+const pathCSSDir = "/assets/css";
 
 app.set("view engine", "pug");
-app.set('views', pathViewsDir)
+app.set("views", pathViewsDir);
+
 app.use(express.static(pathPublicDir));
 
 app.get("/", (request, response) => {
-  response.render("index", { title: "The Title", content: "Hello World!", something: '../dfd' });
+  response.render("index", {
+    title: "The Title",
+    content: "Hello World!",
+    pathCSSDir
+  });
 });
 
 app.get("/help", (request, response) => {
