@@ -9,8 +9,6 @@ const pathViewsDir = path.join(__dirname, "../views");
 
 console.log(pathPublicDir);
 
-const pathCSSDir = "/assets/css";
-
 app.set("view engine", "pug");
 app.set("views", pathViewsDir);
 
@@ -19,8 +17,7 @@ app.use(express.static(pathPublicDir));
 app.get("/", (request, response) => {
   response.render("index", {
     title: "The Title",
-    content: "Hello World!",
-    pathCSSDir
+    content: "Hello World!"
   });
 });
 
