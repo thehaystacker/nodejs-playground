@@ -7,6 +7,7 @@ const port = "4001";
 const pathPublicDir = path.join(__dirname, "../public");
 const pathViewsDir = path.join(__dirname, "../views");
 
+console.log('[path join]', path.join());
 console.log(pathPublicDir);
 
 app.set("view engine", "pug");
