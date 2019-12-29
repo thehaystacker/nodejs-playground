@@ -1,12 +1,16 @@
 {
-  "name": "mongodb",
+  "name": "mongodb-playground",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^3.4.1",
+    "mongoose": "^5.8.3"
+  }
 }
