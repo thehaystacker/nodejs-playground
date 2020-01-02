@@ -20,4 +20,3 @@ task1
   .catch(error => {
     console.log("[Error saving the task]");
   });
- 
