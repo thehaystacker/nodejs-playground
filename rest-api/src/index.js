@@ -10,10 +10,6 @@ app.post("/", (req, res) => {
   res.send(req.body);
 });
 
-app.post("/blog", (req, res) => {
-  res.send(req.body);
-});
-
 app.listen(port, () => {
   console.log("[App listening on port : " + port + "]");
 });
