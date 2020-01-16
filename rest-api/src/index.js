@@ -6,10 +6,10 @@ const port = process.env.port || 3010;
 
 app.use(express.json());
 
-app.post("/", (req, res) => {
-  res.send(req.body);
-});
 
 app.listen(port, () => {
   console.log("[App listening on port : " + port + "]");
 });
+
+
+// New changes
