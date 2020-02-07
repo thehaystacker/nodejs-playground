@@ -81,7 +81,6 @@ const user1 = new modelUsers({
 
 user1.save().then(response => {
     console.log('[responnse]', response);
-    
 }).catch(error => {
     console.log('[error]', error);
     
