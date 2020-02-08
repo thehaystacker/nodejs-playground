@@ -8,6 +8,8 @@
 // 4. Checking errors when we pass the wrong data
 // 5. Installing the npm validator package and using it
 // 6. Using the inbuilt validating properties of mongoose ( like trim, required )
+// 7. Installing postman
+// 8. Creating the API endpoint
 
 // // CREATING THE BASIC MODEL USING MONGOOSE
 // const mongoose = require('mongoose');
