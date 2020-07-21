@@ -1,3 +1,0 @@
-1. Using express to create web serves with node.js
-2. Serving html, styling using css and servring json data
-
